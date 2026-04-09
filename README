@@ -72,11 +72,11 @@ The backend provides data for dashboard visualization:
 Role-based restrictions are implemented using authorization attributes:
 
 Feature      	Viewer	Analyst	Admin
-View Dashboard	✅	    ✅	   ✅
-View Records	  ❌	     ✅	   ✅
-Create Records	❌	    ❌	   ✅
-Update Records	❌	    ❌	   ✅
-Delete Records	❌	    ❌	   ✅
+View Dashboard	 Yes	   Yes	   Yes
+View Records	   No	    Yes	   Yes
+Create Records		No     No	    Yes
+Update Records		No    	No     Yes
+Delete Records		No    	No     Yes
 
 ---
 
