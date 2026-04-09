@@ -1,0 +1,179 @@
+💰 Finance Dashboard Backend API
+
+📌 Introduction
+
+This project is a backend system named Finance Data Processing and Access Control Backend developed using ASP.NET Core Web API for managing financial records and providing dashboard insights.
+
+The system supports role-based access control, allowing different users to interact with the application based on their permissions.
+
+---
+
+ 🎯 Objective
+
+The goal of this project is to design a structured backend that:
+
+* Manages financial transactions
+* Provides summary and analytical data
+* Implements secure authentication and authorization
+
+---
+
+🚀 Key Features
+
+1. 🔐 User Management
+
+* User Registration and Login
+* JWT-based Authentication
+* Role-based Authorization:
+
+  * **Admin** → Full access (CRUD operations)
+  * **Analyst** → View records and analytics
+  * **Viewer** → View dashboard data only
+* User status management (`isActive`)
+
+---
+
+2. 💵 Financial Records
+
+* Add, update, delete financial transactions
+* Fields include:
+
+  * Amount
+  * Type (Income / Expense)
+  * Category
+  * Date
+  * Description
+
+---
+
+3. 🔍 Filtering Options
+
+* Filter by type
+* Filter by category
+* Filter by date range
+
+---
+
+4. 📊 Dashboard APIs
+
+The backend provides data for dashboard visualization:
+
+* Total Income, Total Expense, Net Balance
+* Category-wise analysis
+* Monthly summary
+* Weekly summary
+* Recent transactions
+* Additional stats (total records, highest expense)
+
+---
+
+5. 🔐 Access Control
+
+Role-based restrictions are implemented using authorization attributes:
+
+Feature      	Viewer	Analyst	Admin
+View Dashboard	✅	    ✅	   ✅
+View Records	  ❌	    ✅	   ✅
+Create Records	❌	    ❌	   ✅
+Update Records	❌	    ❌	   ✅
+Delete Records	❌	    ❌	   ✅
+
+---
+
+6. ⚠️ Validation & Error Handling
+
+* Ensures valid input (e.g., amount > 0)
+* Handles errors using proper HTTP status codes:
+
+  * 400 (Bad Request)
+  * 401 (Unauthorized)
+  * 404 (Not Found)
+
+---
+
+7. 🛠️ Technologies Used
+
+* ASP.NET Core Web API (.NET 8)
+* Entity Framework Core
+* InMemory Database
+* JWT Authentication
+* Swagger (API testing)
+
+---
+
+ ⚙️ How to Run the Project
+
+1. Clone the repository
+
+```bash
+git clone <your-repo-link>
+cd FinanceDashboard
+```
+
+2. Restore dependencies
+
+```bash
+dotnet restore
+```
+
+3. Run the application
+
+```bash
+dotnet run
+```
+
+4. Open Swagger UI
+
+```
+https://localhost:7015/swagger
+```
+
+---
+
+ 🔑 API Usage Flow
+
+1. Register a user → `/api/auth/register`
+2. Login → `/api/auth/login`
+3. Copy JWT token
+4. Authorize
+      -> Click 🔒 Authorize in Swagger
+      -> Paste:
+            Bearer YOUR_TOKEN
+
+ 📊 Sample APIs
+
+* `GET /api/transactions/overview` → Dashboard summary
+* `GET /api/transactions/category-analysis` → Category data
+* `GET /api/transactions/monthly-report` → Monthly trends
+* `GET /api/transactions/recent` → Recent transactions
+
+---
+
+📂 Data Storage
+
+* Uses **InMemory Database**
+* Data is temporary and resets when the application restarts
+
+---
+
+ 📈 Future Improvements
+
+* Integrate SQL Server or MySQL
+* Add password hashing
+* Build frontend dashboard
+* Implement pagination
+
+---
+ 📚 Learning Outcome
+
+This project helped in understanding:
+
+* Backend API design 
+* Authentication using JWT
+* Role-based access control
+* Data aggregation for dashboards
+
+---
+
+ 👩‍💻 Author
+Priyanka Sahu
