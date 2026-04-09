@@ -73,7 +73,7 @@ Role-based restrictions are implemented using authorization attributes:
 
 Feature      	Viewer	Analyst	Admin
 View Dashboard	✅	    ✅	   ✅
-View Records	  ❌	    ✅	   ✅
+View Records	  ❌	     ✅	   ✅
 Create Records	❌	    ❌	   ✅
 Update Records	❌	    ❌	   ✅
 Delete Records	❌	    ❌	   ✅
